@@ -21,4 +21,17 @@ public abstract class Conta {
         System.out.println("Nome do titular: " + titular);
         System.out.println("Saldo: " + saldo);
     }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public Double getSaldo() {
+        return saldo;
+    }
+
 }
