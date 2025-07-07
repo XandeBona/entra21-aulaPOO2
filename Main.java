@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-
-        Banco banco = new Banco();
+        INotificador notificador = new NotificadorEmail();
+        Banco banco = new Banco(notificador);
 
         Conta contacorrente = new ContaCorrente (
                 "Alexandre",
@@ -20,9 +20,11 @@ public class Main {
         );
 
         banco.executarRotinaMensal(contacorrente);
+        banco.processar();
         banco.executarRotinaMensal(contapoupanca);
+        banco.processar();
         banco.executarRotinaMensal(containvestimento);
-
+        banco.processar();
 
 
     }
