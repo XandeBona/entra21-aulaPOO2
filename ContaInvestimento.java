@@ -1,11 +1,11 @@
 public class ContaInvestimento extends Conta{
 
-    public ContaInvestimento(String titular, Double saldo) {
-        super(titular, saldo);
+    public ContaInvestimento(String titular, Double saldoInicial) {
+        super(titular, saldoInicial);
     }
 
     @Override
     public void atualizarSaldo() {
-        System.out.println("O saldo atual é de R$ " + (saldo + (saldo * 0.02) - 5));
+        saldo += (saldo * 0.02) - 5;
     }
 }

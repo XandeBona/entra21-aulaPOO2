@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Banco {
 
     private INotificador notificador;
@@ -6,16 +8,10 @@ public class Banco {
         this.notificador = notificador;
     }
 
-    public void executarRotinaMensal(Conta listaContas) {
-        System.out.println("============");
-        listaContas.exibirDados();
-        listaContas.atualizarSaldo();
-
+    public void executarRotinaMensal(List<Conta> contas) {
+        for (Conta conta : contas) {
+            conta.atualizarSaldo();
+        }
+        notificador.enviarMensagem("Rotina mensal executada!!");
     }
-
-    public void processar() {
-        notificador.enviarMensagem("O seu saldo é de: ");
-    }
-
 }
-
